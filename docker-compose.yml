@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  currenttime42.com-wsgi:
+    image: currenttime42.com-wsgi:latest
+    container_name: currenttime42.com-wsgi
+    networks:
+      - currenttime42
+    ports:
+      - 8091:8080
+    env_file:
+      - /home/ubuntu/env/currenttime42.com/currenttime42.com-wsgi.env
+
+networks:
+  currenttime42:
+    driver: bridge
